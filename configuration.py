@@ -1,0 +1,5 @@
+URL_SERVICE = "https://b22d6291-a998-42d5-9037-037dcfa5653d.serverhub.praktikum-services.ru"
+DOC_PATH = "/docs/"
+CREATE_ORDER = "/api/v1/orders"
+ALL_ORDERS = "/api/v1/orders"
+FIND_ORDER = "/api/v1/orders/track"
