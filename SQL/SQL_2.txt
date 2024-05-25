@@ -1,0 +1,22 @@
+
+Есть таблица заказов "Orders", в которой есть колонки id, courierId, firstName, lastName, address, metroStation, phone, rentTime, deliveryDate, track, inDelivery, color, comment, cancelled, finished, createdAt, updatedAt 
+
+Есть таблица "Couriers", в которой есть колонки id, login, passwordHash, firstName, createdAt, updatedAt
+
+Нужно сформировать SQL-запрос к базе данных PostgreSQL: тебе нужно проверить, отображается ли созданный заказ в базе данных.
+Для этого: выведи список логинов курьеров с количеством их заказов в статусе «В доставке» (поле inDelivery = true). 
+
+
+psql -U morty -d scooter_rent
+smith
+SELECT *
+FROM "Orders";
+
+
+SELECT c.login AS courier_login,
+       count(o.id) AS order_count
+FROM "Orders" o
+LEFT JOIN "Couriers" c
+ON o."courierId" = c.id
+WHERE o."inDelivery" = true
+GROUP BY c.login;
