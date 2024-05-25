@@ -5,6 +5,7 @@ import configuration
 import sender_stand_request
 import requests
 
+
 def test_get_order_by_track():
     track_number = sender_stand_request.create_order()
     assert track_number is not None, "Track number not found in the response"
